@@ -1,0 +1,14 @@
+body {
+  margin: 2;
+  padding: 2;
+  box-sizing: border-box;
+  font-family: "Dosis";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  /*font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;*/
+  font-family: "Dosis";
+}

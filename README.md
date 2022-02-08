@@ -13,3 +13,9 @@ npm run start
 yarn install
 yarn start
 ```
+
+Have installed the concurrently package that runs the scripts file parallelly:
+
+```
+npm run dev
+```
