@@ -30,23 +30,18 @@ export default function Register() {
     if (!namePattern.test(fNameRef.current!.value)) {
       fNameRef.current!.focus();
       setError(errorLabels[0]);
-      fNameRef.current!.value = "";
     } else if (!namePattern.test(lNameRef.current!.value)) {
       lNameRef.current!.focus();
       setError(errorLabels[1]);
-      lNameRef.current!.value = "";
     } else if (!emailPattern.test(emailRef.current!.value)) {
       emailRef.current!.focus();
       setError(errorLabels[2]);
-      emailRef.current!.value = "";
     } else if (!paswrdPattern.test(paswrdRef.current!.value)) {
       paswrdRef.current!.focus();
       setError(errorLabels[3]);
-      paswrdRef.current!.value = "";
     } else if (paswrdRef.current!.value !== confirmPaswrdRef.current!.value) {
       confirmPaswrdRef.current!.focus();
       setError(errorLabels[4]);
-      confirmPaswrdRef.current!.value = "";
     } else {
       setError("");
       navigate("/");

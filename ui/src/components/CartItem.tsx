@@ -3,7 +3,12 @@ import { useDispatch } from "react-redux";
 import { AddToCart, RemoveFromCart } from "../actions/actions";
 import { CartModel } from "../models/CartModel";
 
-export default function CartItem(props: any) {
+interface ICartItems {
+  cart: CartModel[];
+  onClose: () => void;
+}
+
+export default function CartItem(props: ICartItems) {
   const { cart } = props;
   const dispatch = useDispatch();
 

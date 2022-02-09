@@ -1,17 +1,24 @@
+import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { AddToCart } from "../actions/actions";
 import useHttp from "../hooks/useHttp";
 import { CartModel } from "../models/CartModel";
 
 import { ProductModel } from "../models/ProductModel";
+import Success from "./Success";
 
 export default function ProductItem(props: ProductModel) {
   const { fetchData: sendData } = useHttp();
+  const [popUp, setPopUp] = useState("");
   const dispatch = useDispatch();
   const { id, name, description, price, stock, imageURL } = props;
 
   const cartHandler = (data: CartModel, { response, responseMessage }: any) => {
-    if (response === "Success") dispatch(AddToCart(data));
+    if (response === "Success") {
+      dispatch(AddToCart(data));
+      setPopUp(`${responseMessage}`);
+      setTimeout(() => setPopUp(""), 1000);
+    }
     console.log(response, responseMessage);
   };
 
@@ -23,9 +30,11 @@ export default function ProductItem(props: ProductModel) {
     };
     sendData(reqConfig, cartHandler.bind(null, product));
   };
+
   return (
     <div className="col-md-3 col-sm-6 p-1">
       <div className="card" id={id}>
+        {popUp !== "" && <Success message={popUp} />}
         <header
           className="card-header bg-white mt-2 border-0 text-center"
           tabIndex={0}

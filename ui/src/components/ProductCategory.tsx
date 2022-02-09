@@ -1,7 +1,14 @@
 import { useNavigate } from "react-router-dom";
 import useWindowDimensions from "../hooks/useWindowDimensions";
 
-export default function ProductCategory(props: any) {
+interface IProductCategory {
+  id: string;
+  name: string;
+  activeId: string | null;
+  onSetActiveCategory: (id: string) => void;
+}
+
+export default function ProductCategory(props: IProductCategory) {
   const navigate = useNavigate();
   const { width } = useWindowDimensions();
   const { id, name } = props;

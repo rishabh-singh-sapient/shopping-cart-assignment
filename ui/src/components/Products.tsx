@@ -14,7 +14,7 @@ import ProductItem from "./ProductItem";
 export default function Products() {
   const { fetchData, loading, error } = useHttp();
   const [categories, setCategories] = useState<CategoryModel[]>([]);
-  const [isActiveCategoryId, setActiveCategoryId] = useState<string>("");
+  const [isActiveCategoryId, setActiveCategoryId] = useState("");
   const products = useSelector((state: IStoreData) => state.products);
   const dispatch = useDispatch();
   const location = useLocation();

@@ -3,25 +3,25 @@ import { useCallback, useState } from "react";
 
 const URL = [process.env.REACT_APP_BASE_URL];
 
-interface Response {
+interface IResponse {
   loading: boolean;
   error: string | boolean | any;
 }
 
-interface ReqConfig {
+interface IReqConfig {
   keyword: string;
   method?: string;
   body?: object;
 }
 
 export default function useHttp() {
-  const [response, setResponse] = useState<Response>({
+  const [response, setResponse] = useState<IResponse>({
     loading: false,
     error: false,
   });
 
   const fetchData = useCallback(
-    async (reqConfig: ReqConfig, requestData: any) => {
+    async (reqConfig: IReqConfig, requestData: any) => {
       try {
         setResponse({
           error: false,

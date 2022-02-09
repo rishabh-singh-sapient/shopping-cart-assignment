@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-//import Carousel from "react-bootstrap/Carousel";
 import useHttp from "../hooks/useHttp";
 
 function Banners() {
@@ -21,18 +20,6 @@ function Banners() {
       setBanners([]);
     };
   }, [fetchData]);
-
-  // const CarouselItem = banners.map((item: any, index: number) => {
-  //   return (
-  //     <Carousel.Item key={item.id}>
-  //       <img
-  //         src={item.bannerImageUrl}
-  //         className="d-block w-100"
-  //         alt={item.bannerImageAlt}
-  //       />
-  //     </Carousel.Item>
-  //   );
-  // });
 
   const CarouselButton = banners.map((item: any, index: number) => {
     return (
